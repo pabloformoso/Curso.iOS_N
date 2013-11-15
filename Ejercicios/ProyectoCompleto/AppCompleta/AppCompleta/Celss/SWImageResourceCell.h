@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SWImageResourceCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *nombreLabel;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface SWRecursosJsonService : NSObject
 
+- (void)getRecursosForController:(id)aController;
+
 @end

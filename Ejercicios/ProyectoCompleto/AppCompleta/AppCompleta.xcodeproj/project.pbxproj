@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E0F4356183562B800D048AF /* SWAlumnoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F4355183562B800D048AF /* SWAlumnoDetailViewController.m */; };
+		6E0F43581835995500D048AF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0F43571835995500D048AF /* MapKit.framework */; };
+		6E0F435A1835995E00D048AF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0F43591835995E00D048AF /* CoreLocation.framework */; };
+		6E0F435D1835997800D048AF /* SWMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F435C1835997800D048AF /* SWMapViewController.m */; };
+		6E0F436018359A7000D048AF /* SWMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F435F18359A7000D048AF /* SWMapPin.m */; };
+		6E0F436318359C1400D048AF /* SWLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F436218359C1400D048AF /* SWLocationManager.m */; };
 		6E442F1218343E95006997B8 /* SWImageResourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E442F1118343E95006997B8 /* SWImageResourceCell.m */; };
 		6E442F1518343EA8006997B8 /* SWWebResourceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E442F1418343EA8006997B8 /* SWWebResourceCell.m */; };
 		6E442F1818343EC3006997B8 /* SWRecursosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E442F1718343EC3006997B8 /* SWRecursosTableViewController.m */; };
@@ -73,6 +79,7 @@
 		6EB676121834009D001E2429 /* SWClasesJsonService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB676111834009D001E2429 /* SWClasesJsonService.m */; };
 		6EB6761518340219001E2429 /* SWAlumnoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB6761418340218001E2429 /* SWAlumnoCell.m */; };
 		6EB6761818340290001E2429 /* SWAlumnosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB6761718340290001E2429 /* SWAlumnosTableViewController.m */; };
+		6EEEE89B1834E81000F5AE45 /* SWRecursoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEE89A1834E81000F5AE45 /* SWRecursoTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +93,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E0F4354183562B800D048AF /* SWAlumnoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWAlumnoDetailViewController.h; path = Controllers/SWAlumnoDetailViewController.h; sourceTree = "<group>"; };
+		6E0F4355183562B800D048AF /* SWAlumnoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWAlumnoDetailViewController.m; path = Controllers/SWAlumnoDetailViewController.m; sourceTree = "<group>"; };
+		6E0F43571835995500D048AF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6E0F43591835995E00D048AF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6E0F435B1835997800D048AF /* SWMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMapViewController.h; path = Controllers/SWMapViewController.h; sourceTree = "<group>"; };
+		6E0F435C1835997800D048AF /* SWMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMapViewController.m; path = Controllers/SWMapViewController.m; sourceTree = "<group>"; };
+		6E0F435E18359A7000D048AF /* SWMapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMapPin.h; path = Models/SWMapPin.h; sourceTree = "<group>"; };
+		6E0F435F18359A7000D048AF /* SWMapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMapPin.m; path = Models/SWMapPin.m; sourceTree = "<group>"; };
+		6E0F436118359C1400D048AF /* SWLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWLocationManager.h; sourceTree = "<group>"; };
+		6E0F436218359C1400D048AF /* SWLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLocationManager.m; sourceTree = "<group>"; };
 		6E442F1018343E95006997B8 /* SWImageResourceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWImageResourceCell.h; path = Celss/SWImageResourceCell.h; sourceTree = "<group>"; };
 		6E442F1118343E95006997B8 /* SWImageResourceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWImageResourceCell.m; path = Celss/SWImageResourceCell.m; sourceTree = "<group>"; };
 		6E442F1318343EA8006997B8 /* SWWebResourceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWWebResourceCell.h; sourceTree = "<group>"; };
@@ -200,6 +217,7 @@
 		6EB6761418340218001E2429 /* SWAlumnoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWAlumnoCell.m; path = Celss/SWAlumnoCell.m; sourceTree = "<group>"; };
 		6EB6761618340290001E2429 /* SWAlumnosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWAlumnosTableViewController.h; path = Controllers/SWAlumnosTableViewController.h; sourceTree = "<group>"; };
 		6EB6761718340290001E2429 /* SWAlumnosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWAlumnosTableViewController.m; path = Controllers/SWAlumnosTableViewController.m; sourceTree = "<group>"; };
+		6EEEE89A1834E81000F5AE45 /* SWRecursoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRecursoTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +225,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E0F435A1835995E00D048AF /* CoreLocation.framework in Frameworks */,
+				6E0F43581835995500D048AF /* MapKit.framework in Frameworks */,
 				6EB675D11833E8CF001E2429 /* libsqlite3.dylib in Frameworks */,
 				6EB6758218338923001E2429 /* CoreGraphics.framework in Frameworks */,
 				6EB6758418338923001E2429 /* UIKit.framework in Frameworks */,
@@ -249,6 +269,8 @@
 		6EB6757E18338923001E2429 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E0F43591835995E00D048AF /* CoreLocation.framework */,
+				6E0F43571835995500D048AF /* MapKit.framework */,
 				6EB675D01833E8CE001E2429 /* libsqlite3.dylib */,
 				6EB6757F18338923001E2429 /* Foundation.framework */,
 				6EB6758118338923001E2429 /* CoreGraphics.framework */,
@@ -302,6 +324,7 @@
 				6EB6760E1833FCEA001E2429 /* SWClaseTest.m */,
 				6EB675AD18338924001E2429 /* AppCompletaTests.m */,
 				6EB675A818338923001E2429 /* Supporting Files */,
+				6EEEE89A1834E81000F5AE45 /* SWRecursoTests.m */,
 			);
 			path = AppCompletaTests;
 			sourceTree = "<group>";
@@ -324,6 +347,8 @@
 				6E6CEED118343887000EE013 /* SWAlumno.m */,
 				6E442F2218343F37006997B8 /* SWRercurso.h */,
 				6E442F2318343F37006997B8 /* SWRercurso.m */,
+				6E0F435E18359A7000D048AF /* SWMapPin.h */,
+				6E0F435F18359A7000D048AF /* SWMapPin.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -337,6 +362,8 @@
 				6EB675C41833A813001E2429 /* SWDetalleClaseViewController.m */,
 				6EB6761618340290001E2429 /* SWAlumnosTableViewController.h */,
 				6EB6761718340290001E2429 /* SWAlumnosTableViewController.m */,
+				6E0F4354183562B800D048AF /* SWAlumnoDetailViewController.h */,
+				6E0F4355183562B800D048AF /* SWAlumnoDetailViewController.m */,
 				6E442F1618343EC3006997B8 /* SWRecursosTableViewController.h */,
 				6E442F1718343EC3006997B8 /* SWRecursosTableViewController.m */,
 				6E442F1918343EE3006997B8 /* SWImageDetailViewController.h */,
@@ -345,6 +372,8 @@
 				6E442F1D18343EF6006997B8 /* SWWebDetailViewController.m */,
 				6E442F1F18343F19006997B8 /* SWAgreagarRecursoViewController.h */,
 				6E442F2018343F19006997B8 /* SWAgreagarRecursoViewController.m */,
+				6E0F435B1835997800D048AF /* SWMapViewController.h */,
+				6E0F435C1835997800D048AF /* SWMapViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -367,6 +396,8 @@
 		6EB675C61833E3F0001E2429 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				6E0F436118359C1400D048AF /* SWLocationManager.h */,
+				6E0F436218359C1400D048AF /* SWLocationManager.m */,
 				6E442F411834407B006997B8 /* NSDate-Utilities.h */,
 				6E442F421834407B006997B8 /* NSDate-Utilities.m */,
 				6E442F431834407B006997B8 /* UIImage-Extensions.h */,
@@ -513,7 +544,7 @@
 			attributes = {
 				CLASSPREFIX = SW;
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = "Pablo Formoso Estada";
+				ORGANIZATIONNAME = "Pablo Formoso Estadra";
 				TargetAttributes = {
 					6EB6759F18338923001E2429 = {
 						TestTargetID = 6EB6757B18338923001E2429;
@@ -586,6 +617,7 @@
 				6E442F1818343EC3006997B8 /* SWRecursosTableViewController.m in Sources */,
 				6EB675CD1833E4DC001E2429 /* SQLiteAccess+PSADB.m in Sources */,
 				6EB676031833F392001E2429 /* UIAlertView+AFNetworking.m in Sources */,
+				6E0F436318359C1400D048AF /* SWLocationManager.m in Sources */,
 				6E442F2118343F19006997B8 /* SWAgreagarRecursoViewController.m in Sources */,
 				6E442F401834406D006997B8 /* MBProgressHUD.m in Sources */,
 				6E442F1E18343EF6006997B8 /* SWWebDetailViewController.m in Sources */,
@@ -605,6 +637,7 @@
 				6EB6759018338923001E2429 /* SWAppDelegate.m in Sources */,
 				6E442F2A18343F5E006997B8 /* SWPostImageService.m in Sources */,
 				6E6CEED218343887000EE013 /* SWAlumno.m in Sources */,
+				6E0F436018359A7000D048AF /* SWMapPin.m in Sources */,
 				6EB6761518340219001E2429 /* SWAlumnoCell.m in Sources */,
 				6E442F1B18343EE3006997B8 /* SWImageDetailViewController.m in Sources */,
 				6EB675EC1833F380001E2429 /* AFSecurityPolicy.m in Sources */,
@@ -617,7 +650,9 @@
 				6E442F2D18343F72006997B8 /* SWPostUrlService.m in Sources */,
 				6E442F461834407B006997B8 /* UIImage-Extensions.m in Sources */,
 				6EB676121834009D001E2429 /* SWClasesJsonService.m in Sources */,
+				6E0F4356183562B800D048AF /* SWAlumnoDetailViewController.m in Sources */,
 				6EB675C91833E496001E2429 /* SQLiteAccess.m in Sources */,
+				6E0F435D1835997800D048AF /* SWMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EB6760F1833FCEA001E2429 /* SWClaseTest.m in Sources */,
+				6EEEE89B1834E81000F5AE45 /* SWRecursoTests.m in Sources */,
 				6EB675AE18338924001E2429 /* AppCompletaTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -745,9 +781,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Pablo Formoso Estrada (4HHFY3497P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppCompleta/AppCompleta-Prefix.pch";
 				INFOPLIST_FILE = "AppCompleta/AppCompleta-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -758,9 +796,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Pablo Formoso Estrada (4HHFY3497P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppCompleta/AppCompleta-Prefix.pch";
 				INFOPLIST_FILE = "AppCompleta/AppCompleta-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -783,6 +823,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "AppCompletaTests/AppCompletaTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -802,6 +843,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppCompleta/AppCompleta-Prefix.pch";
 				INFOPLIST_FILE = "AppCompletaTests/AppCompletaTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

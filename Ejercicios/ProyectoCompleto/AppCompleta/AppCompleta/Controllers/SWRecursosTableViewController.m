@@ -5,116 +5,97 @@
 //  Created by Pablo Formoso Estada on 14/11/13.
 //  Copyright (c) 2013 Pablo Formoso Estada. All rights reserved.
 //
-
+#import "UIImageView+AFNetworking.h"
+#import "SWWebResourceCell.h"
+#import "SWImageResourceCell.h"
+#import "SWRercurso.h"
+#import "SWRecursosJsonService.h"
 #import "SWRecursosTableViewController.h"
 
 @interface SWRecursosTableViewController ()
-
+@property (nonatomic, strong) NSArray *recursos;
 @end
 
 @implementation SWRecursosTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
+#endif
+  
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self loadData];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (void)loadData {
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
+#endif
+  SWRecursosJsonService *ws = [[SWRecursosJsonService alloc] init];
+  [ws getRecursosForController:self];
+}
+
+- (void)updateView:(NSArray *)anArray {
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
+#endif
+  
+  _recursos = [[NSArray alloc] initWithArray:anArray];
+  [self.tableView reloadData];
+  
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [_recursos count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  SWRercurso *rec = [_recursos objectAtIndex:indexPath.row];
+  
+  if ([rec.link length] == 0) {
     
-    // Configure the cell...
+    static NSString *CellIdentifier = @"ImageCell";
+    SWImageResourceCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    [cell.imageView setImageWithURL:[NSURL URLWithString:rec.photo_url]];
+    [cell.nombreLabel setText:rec.nombre];
     
     return cell;
+    
+  } else {
+    static NSString *CellIdentifier = @"WebCell";
+    SWWebResourceCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    [cell.nameLabel setText:rec.nombre];
+    [cell.linkLabel setText:rec.link];
+    
+    return cell;
+  }
+
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
 #pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d) %@", __PRETTY_FUNCTION__, __LINE__, segue.identifier);
+#endif
+  
+  SWRercurso *tmp = [_recursos objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+  
+  if ([segue.destinationViewController respondsToSelector:@selector(setRecurso:)]) {
+    [segue.destinationViewController performSelector:@selector(setRecurso:) withObject:tmp];
+  }
+  
 }
-
- */
 
 @end

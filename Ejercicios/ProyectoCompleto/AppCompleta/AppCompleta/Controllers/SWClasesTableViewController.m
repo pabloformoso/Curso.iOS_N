@@ -10,6 +10,7 @@
 #import "SWClaseCell.h"
 #import "SWClasesTableViewController.h"
 #import "SWClasesXMLService.h"
+#import "SWClasesJsonService.h"
 
 @interface SWClasesTableViewController ()
 @property (nonatomic, strong) NSArray *clases;
@@ -74,10 +75,16 @@
     //NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     //_clases = [NSKeyedUnarchiver unarchiveObjectWithData:[userDefaults objectForKey:@"clases_array"]];
   
-    _clases = [SQLiteAccess getClasesFromDB];
+    //_clases = [SQLiteAccess getClasesFromDB];
+  
+    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+    [HUD setLabelText:@"cargando..."];
   
     SWClasesXMLService *ws = [[SWClasesXMLService alloc] init];
     [ws getClasesForController:self];
+  
+    SWClasesJsonService *ws2 = [[SWClasesJsonService alloc] init];
+    [ws2 getClasesForController:self];
 }
 
 #pragma mark - Protocolo informal para los servicios
@@ -86,11 +93,14 @@
   NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
 #endif
   
+  [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
+  
   _clases = [[NSArray alloc] initWithArray:anArray];
   [self.tableView reloadData];
 }
 
 - (void)updateViewFailed {
+  [MBProgressHUD hideAllHUDsForView:self.tableView animated:YES];
 #ifndef NDEBUG
   NSLog(@"%s (line:%d) Error en el servicio", __PRETTY_FUNCTION__, __LINE__);
 #endif

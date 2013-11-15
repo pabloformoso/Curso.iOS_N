@@ -10,4 +10,12 @@
 
 @interface SWRercurso : NSObject
 
+- (id)initWithJSonDictionary:(NSDictionary *)dic;
+
+@property (nonatomic, assign) int recursoId;
+@property (nonatomic, strong) NSString *nombre;
+@property (nonatomic, strong) NSString *descripcion;
+@property (nonatomic, strong) NSString *link;
+@property (nonatomic, strong) NSString *photo_url;
+
 @end

@@ -5,34 +5,47 @@
 //  Created by Pablo Formoso Estada on 14/11/13.
 //  Copyright (c) 2013 Pablo Formoso Estada. All rights reserved.
 //
-
+#import "UIWebView+AFNetworking.h"
+#import "SWRercurso.h"
 #import "SWWebDetailViewController.h"
 
 @interface SWWebDetailViewController ()
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
 @implementation SWWebDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  
+  NSURLRequest *url = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:_recurso.link]];
+  [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+  
+  [_webView loadRequest:url progress:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+#ifndef NDEBUG
+    NSLog(@"%s (line:%d) load req", __PRETTY_FUNCTION__, __LINE__);
+#endif
+    if (totalBytesExpectedToWrite == totalBytesWritten) {
+      [MBProgressHUD hideHUDForView:self.view animated:YES];
     }
-    return self;
+  } success:^NSString *(NSHTTPURLResponse *response, NSString *HTML) {
+#ifndef NDEBUG
+    NSLog(@"%s (line:%d) success", __PRETTY_FUNCTION__, __LINE__);
+#endif
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    return HTML;
+  } failure:^(NSError *error) {
+#ifndef NDEBUG
+    NSLog(@"%s (line:%d) error", __PRETTY_FUNCTION__, __LINE__);
+#endif
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+  }];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

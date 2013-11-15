@@ -13,9 +13,28 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+  
+    NSURL *urlToParse = [launchOptions objectForKey:UIApplicationLaunchOptionsURLKey];
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d) %@", __PRETTY_FUNCTION__, __LINE__, urlToParse);
+#endif
+    if (urlToParse) {
+
+      [self application:application handleOpenURL:urlToParse];
+    }
     return YES;
 }
-							
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
+#endif
+	if ([[url scheme] isEqualToString:@"psa"] && [[url path] isEqualToString:@"/es.softwshisper.AppCompleta"]) {
+    NSLog(@"App Completa abre el Gestor de fichero");
+	}
+  return YES;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

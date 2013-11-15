@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SWAgreagarRecursoViewController : UIViewController
+@interface SWAgreagarRecursoViewController : UIViewController <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *nombreTextField;
+@property (weak, nonatomic) IBOutlet UITextField *urlTextField;
+@property (weak, nonatomic) IBOutlet UITextField *descTextField;
 
 @end

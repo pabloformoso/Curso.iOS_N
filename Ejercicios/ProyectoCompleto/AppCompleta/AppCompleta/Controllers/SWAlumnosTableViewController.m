@@ -61,8 +61,11 @@
     return [_alumnos count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
+#endif
+  
     static NSString *CellIdentifier = @"AlumnoCell";
     SWAlumnoCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
                                                          forIndexPath:indexPath];
@@ -78,7 +81,15 @@
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
+#endif
+  
+  SWAlumno *tmp = [_alumnos objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+  
+  if ([segue.destinationViewController respondsToSelector:@selector(setAlumno:)]) {
+    [segue.destinationViewController performSelector:@selector(setAlumno:) withObject:tmp];
+  }
 }
 
 

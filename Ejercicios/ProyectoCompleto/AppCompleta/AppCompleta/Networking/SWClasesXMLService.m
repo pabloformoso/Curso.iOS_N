@@ -24,7 +24,19 @@
   NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
 #endif
 
+  _controller = aController;
   
+  // http://curso.softwhisper.es/aecomo_classes.xml
+  
+  NSString *urlString = @"http://curso.softwhisper.es/aecomo_classes.xml";
+  NSURL *url = [NSURL URLWithString:urlString];
+  
+  NSURLRequest *request = [NSURLRequest requestWithURL:url
+                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                       timeoutInterval:60];
+  
+  
+  [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
 // Recivimos la primera respusta del server

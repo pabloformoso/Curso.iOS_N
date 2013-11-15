@@ -10,4 +10,6 @@
 
 @interface SWPostUrlService : NSObject
 
+- (void)postRescurso:(SWRercurso *)rec FromController:(id)aController;
+
 @end

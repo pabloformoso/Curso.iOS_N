@@ -5,7 +5,7 @@
 //  Created by Pablo Formoso Estada on 13/11/13.
 //  Copyright (c) 2013 Pablo Formoso Estada. All rights reserved.
 //
-
+#import "SWRecursosTableViewController.h"
 #import "SWClase.h"
 #import "SWAppDelegate.h"
 
@@ -34,9 +34,42 @@
   [userDefault setObject:[NSKeyedArchiver archivedDataWithRootObject:clases]
                   forKey:@"clases_array"];
   
+  NSURL *urlToParse = [launchOptions objectForKey:UIApplicationLaunchOptionsURLKey];
+
+  if (urlToParse) {
+    [self application:application handleOpenURL:urlToParse];
+  }
+  
+  [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+  
   return YES;
 }
-							
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+
+  if ([[url scheme] isEqualToString:@"psa"]) {
+    NSLog(@"Recibidos varios params %@", [url parameterString]);
+	}
+  
+  return YES;
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+
+#ifndef NDEBUG
+  NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
+#endif
+  
+  UITabBarController *tabController = (UITabBarController *)_window.rootViewController;
+  id controller = [tabController selectedViewController];
+  
+  if ([controller isKindOfClass:[SWRecursosTableViewController class]]) {
+    [(SWRecursosTableViewController *)controller loadData];
+  }
+  
+  completionHandler(UIBackgroundFetchResultNoData);
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
   // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

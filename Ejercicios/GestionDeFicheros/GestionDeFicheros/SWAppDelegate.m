@@ -19,7 +19,6 @@
   NSLog(@"%s (line:%d) %@", __PRETTY_FUNCTION__, __LINE__, urlToParse);
 #endif
     if (urlToParse) {
-
       [self application:application handleOpenURL:urlToParse];
     }
     return YES;
@@ -29,9 +28,26 @@
 #ifndef NDEBUG
   NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
 #endif
-	if ([[url scheme] isEqualToString:@"psa"] && [[url path] isEqualToString:@"/es.softwshisper.AppCompleta"]) {
+	
+  if ([[url scheme] isEqualToString:@"psadoc"]) {
+    
     NSLog(@"App Completa abre el Gestor de fichero");
+    
+    NSString *url = @"psa://shishishi?param=1&token=8DEF1ABD";
+    
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
+      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    } else {
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"URLs"
+                                                      message:@"Sin URL para abrir"
+                                                     delegate:nil
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+      [alert show];
+    }
+    
 	}
+  
   return YES;
 }
 

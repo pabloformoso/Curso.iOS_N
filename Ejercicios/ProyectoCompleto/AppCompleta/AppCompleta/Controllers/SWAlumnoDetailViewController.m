@@ -26,9 +26,13 @@
   
     [super viewDidLoad];
     [self loadData];
-    UIDocumentInteractionController *docCont = [[UIDocumentInteractionController alloc] init];
-    [docCont setURL:[NSURL URLWithString:@"psadoc://lalalalala"]];
-  [docCont presentPreviewAnimated:YES];
+  
+    /* Solo acepta protocolos de ficheros
+      UIDocumentInteractionController *docCont = 
+     [[UIDocumentInteractionController alloc] init];
+     [docCont setURL:[NSURL URLWithString:@"psadoc://lalalalala"]];
+     [docCont presentPreviewAnimated:YES];
+     */
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +60,7 @@
   NSLog(@"%s (line:%d)", __PRETTY_FUNCTION__, __LINE__);
 #endif
   
-  NSURL *url = [NSURL URLWithString:@"psadoc://es.softwhisper.GestionDeFicheros"];
+  NSURL *url = [NSURL URLWithString:@"psadoc://es.softwhisper.AppCompleta"];
   
   if([[UIApplication sharedApplication] canOpenURL:url])
     [[UIApplication sharedApplication] openURL:url];

@@ -546,6 +546,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Pablo Formoso Estadra";
 				TargetAttributes = {
+					6EB6757B18338923001E2429 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					6EB6759F18338923001E2429 = {
 						TestTargetID = 6EB6757B18338923001E2429;
 					};
@@ -785,7 +792,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppCompleta/AppCompleta-Prefix.pch";
 				INFOPLIST_FILE = "AppCompleta/AppCompleta-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -800,7 +807,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppCompleta/AppCompleta-Prefix.pch";
 				INFOPLIST_FILE = "AppCompleta/AppCompleta-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

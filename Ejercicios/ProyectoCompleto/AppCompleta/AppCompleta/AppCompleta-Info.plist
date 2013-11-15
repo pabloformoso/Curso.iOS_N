@@ -28,10 +28,10 @@
 			<key>CFBundleURLIconFile</key>
 			<string>721-bookmarks@2x</string>
 			<key>CFBundleURLName</key>
-			<string>es.softwhisper.AppCompleta</string>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>psa1</string>
+				<string>psa</string>
 			</array>
 		</dict>
 	</array>
@@ -41,6 +41,10 @@
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

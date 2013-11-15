@@ -8,5 +8,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SWRecursosTableViewController : UITableViewController
-
+- (void)loadData;
 @end
